@@ -1,6 +1,3 @@
-# IDEs
-.idea/
-
-# Hugo
-resources/
-public/
+fonts
+awesome-cv.cls
+GillianMcHugo_CV.log
