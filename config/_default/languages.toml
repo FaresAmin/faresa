@@ -1,70 +1,20 @@
----
-name: Gillian P. McHugo
-position: "Computational Biologist"
-address: "School of Agriculture and Food Science, University College Dublin, Ireland"
-www: gillianmchugo.github.io
-email: "gillian.mc-hugo@ucdconnect.ie"
-github: GillianMcHugo
-linkedin: GillianMcHugo
-orcid: 0000-0001-6920-0041
-date: "`r format(Sys.time(), '%B %Y')`"
-headcolor: 333333
-aboutme: "I am a PhD student at University College Dublin, working with Professor David E. MacHugh and Professor Stephen V. Gordon. I am currently studying integrative genomics of infectious diseases in cattle, focusing on trypanosomiasis in hybrid African cattle and bovine tuberculosis in Irish cattle."
-output: vitae::awesomecv
----
+# Languages
+#   Create a `[X]` block for each language you want, where X is the language ID.
+#   Refer to https://sourcethemes.com/academic/docs/language/
 
-```{r Setup, include = F}
-knitr::opts_chunk$set(echo = F, warning = F, message = F)
-library(vitae)
-```
+# Configure the English version of the site.
+[en]
+  languageCode = "en-us"
+  # contentDir = "content/en"  # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
 
-
-# Research Experience
-
-```{r Research}
-tibble::tribble(
-  ~ Position, ~ Year, ~ Institution, ~ Where, ~ details, 
-  "PhD in Infection Biology", "2018 - present", "University College Dublin", "Dublin, Ireland", "Thesis: Integrative genomics of infectious diseases in cattle, supervised by \\href{https://people.ucd.ie/david.machugh}{Professor David E. MacHugh} and \\href{https://people.ucd.ie/stephen.gordon}{Professor Stephen V. Gordon}.",
-  "Research Assistant", "April - July, 2018", "Animal Genomics Laboratory, University College Dublin", "Dublin, Ireland", "Assisted Professor David MacHugh with preparation of a review on ancient DNA and guiding an undergraduate research student. This resulted in the publication of a review in  \\href{https://doi.org/10.1186/s12915-019-0724-7}{\\textit{BMC Biology}} and presentations at the \\href{http://smbe2019.org}{Society for Molecular Biology and Evolution Meeting 2019}.",
-  "Volunteer Research Assistant", "April - June, 2017", "Department of Behavioural Ecology and Evolutionary Genetics, Max Planck Institute of Ornithology", "Tenerife, Spain", "Assisted Dr. Luisana Carballo with data collection of parrot courtship behaviour at the breeding station of the Loro Parque Foundation in La Vera."
-) %>% 
-  detailed_entries(Institution, Where, Position, Year, details, .protect = F)
-```
-
-# Education
-
-```{r Education}
-tibble::tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ details, 
-  "MSc in Evolutionary Biology", "2015 - 2016", "University College Dublin", "Dublin, Ireland", "Thesis: A population genomic analysis of the endangered Galway sheep breed, supervised by Professor David E. MacHugh and published in \\href{https://doi.org/10.3389/fgene.2019.00927}{\\textit{Frontiers in Genetics}}.",
-  "BA (Hons) in Natural Sciences (Zoology)", "2011 - 2015", "Trinity College Dublin", "Dublin, Ireland", "Thesis: \\textit{Mytilus edulis} as a bioindicator of water pollution: potential histopathology biomarkers in Dublin Bay and Newquay, Co. Clare, supervised by \\href{https://www.tcd.ie/research/profiles/?profile=jwilson}{Professor James G. Wilson}."
-) %>% 
-  detailed_entries(Institution, Where, Degree, Year, details, .protect = F)
-```
-
-
-# Teaching Experience
-
-\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}
-
-+ I have demonstrated for modules in University College Dublin, including both wet lab and computational practicals. Modules I have demonstrated for include Applied Biotechnology ([ANSC30100](http://www.ucd.ie/modules/ANSC30100)) and Bioinformatics ([MEIN30240](http://www.ucd.ie/modules/MEIN30240)).
-+ Since September 2019 I have taken over running [UCD_CodeClub](https://ucdcodeclub.github.io/), a bioinformatics group for PhD students at UCD. This involves teaching other students how to use R, following the [R for Data Science](https://r4ds.had.co.nz/) book by Garrett Grolemund and Hadley Wickham. 
-
-# Publications
-
-```{r Publications}
-scholar::get_publications("4mpdqz4AAAAJ&h") %>% 
-  distinct(title, .keep_all = T) %>%
-  filter(journal != "bioRxiv") %>% 
-  transmute(bibtype = "Article", author = as.character(author),
-            title = as.character(title), journaltitle = as.character(journal),
-            year, key = row_number()) %>% 
-  arrange(desc(year)) %>% 
-  RefManageR::as.BibEntry() %>% 
-  RefManageR::WriteBib("GillianMcHugo_CV.bib")
-bibliography_entries("GillianMcHugo_CV.bib")
-```
-
-\footnotesize
-
-+ A full list can be found on [ORCID](https://orcid.org/0000-0001-6920-0041), [ResearchGate](https://www.researchgate.net/profile/Gillian_McHugo), or [Google Scholar](https://scholar.google.com/citations?user=4mpdqz4AAAAJ).
+# Uncomment the lines below to configure your website in a second language.
+#[zh]
+#  languageCode = "zh-Hans"
+#  contentDir = "content/zh"
+#  title = "Chinese website title..."
+#  [zh.params]
+#    description = "Site description in Chinese..."
+#  [[zh.menu.main]]
+#    name = "Wo"
+#    url = "#about"
+#    weight = 1
